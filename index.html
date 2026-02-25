@@ -67,34 +67,50 @@ header {
     font-size: 18px;
 }
 
-.mobile-menu a:hover {
-    opacity: 0.7;
-}
-
 .mobile-menu.active {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
 }
 
-/* HERO */
+/* MAIN TITLE SECTION */
 
 .hero {
     padding-top: 140px;
-    padding-bottom: 80px;
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: normal;
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
-.hero h2 {
-    font-size: 18px;
+.hero hr {
+    width: 60%;
+    border: none;
+    border-top: 1px solid #444;
+    margin: 0 auto 80px auto;
+}
+
+/* LETTER SECTION */
+
+.letter {
+    max-width: 700px;
+    margin: 0 auto 120px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.letter h2 {
+    font-size: 26px;
     font-weight: normal;
-    margin: 0;
+    margin-bottom: 40px;
+}
+
+.letter p {
+    font-size: 18px;
+    line-height: 1.8;
 }
 
 /* ROW SECTION */
@@ -127,7 +143,7 @@ header {
     font-size: 22px;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
@@ -139,6 +155,18 @@ header {
 
     .row img {
         max-width: 85%;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .letter h2 {
+        font-size: 22px;
+    }
+
+    .letter p {
+        font-size: 17px;
     }
 }
 
@@ -158,8 +186,18 @@ header {
 </nav>
 
 <section class="hero">
-    <h1>Duelos salvajes</h1>
-    <h2>El museo de la incertidumbre</h2>
+    <h1>Museografía de lo incierto</h1>
+    <hr>
+</section>
+
+<section class="letter">
+    <h2>Estimado lector:</h2>
+    <p>
+        No queríamos dejar pasar la oportunidad de compartir los otros dos textos
+        que encontré en la computadora de Joaquín junto al manuscrito y a los que se hace
+        referencia en la segunda parte del libro. Esperando que brinden el complemento
+        perfecto para el libro, te deseamos una placentera lectura.
+    </p>
 </section>
 
 <section class="section">

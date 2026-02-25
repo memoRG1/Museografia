@@ -73,7 +73,7 @@ header {
     pointer-events: auto;
 }
 
-/* MAIN TITLE SECTION */
+/* HERO */
 
 .hero {
     padding-top: 140px;
@@ -93,7 +93,7 @@ header {
     margin: 0 auto 80px auto;
 }
 
-/* LETTER SECTION */
+/* LETTER */
 
 .letter {
     max-width: 700px;
@@ -119,33 +119,48 @@ header {
     padding: 60px 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* centers the rows block */
+    align-items: center;
 }
 
 .row {
     display: flex;
-    align-items: center;
-    gap: 60px;
-    margin-bottom: 100px;
+    align-items: stretch; /* makes both sides same height */
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 120px;
     text-decoration: none;
     color: inherit;
-    max-width: 900px;       /* controls width */
-    width: 100%;
 }
 
-.row.reverse {
-    flex-direction: row-reverse;
+/* 50 / 50 layout */
+
+.row-image,
+.row-text {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.row img {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
+/* IMAGE */
+
+.row-image img {
+    width: 90%;
+    height: 380px;
     object-fit: cover;
 }
 
-.row-title {
-    font-size: 22px;
+/* TEXT */
+
+.row-text {
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+/* REVERSE */
+
+.row.reverse {
+    flex-direction: row-reverse;
 }
 
 /* MOBILE */
@@ -155,12 +170,21 @@ header {
     .row,
     .row.reverse {
         flex-direction: column;
-        text-align: center;
-        gap: 30px;
     }
 
-    .row img {
-        max-width: 85%;
+    .row-image,
+    .row-text {
+        width: 100%;
+    }
+
+    .row-image img {
+        width: 90%;
+        height: 260px;
+    }
+
+    .row-text {
+        font-size: 22px;
+        margin-top: 20px;
     }
 
     .hero h1 {
@@ -209,13 +233,21 @@ header {
 <section class="section">
 
     <a href="duelos.html" class="row">
-        <img src="images/duelos.JPG" alt="Duelos salvajes">
-        <div class="row-title">Duelos salvajes</div>
+        <div class="row-image">
+            <img src="images/duelos.JPG" alt="Duelos salvajes">
+        </div>
+        <div class="row-text">
+            Duelos salvajes
+        </div>
     </a>
 
     <a href="museo.html" class="row reverse">
-        <img src="images/museo.JPG" alt="El museo de la incertidumbre">
-        <div class="row-title">El museo de la incertidumbre</div>
+        <div class="row-image">
+            <img src="images/museo.JPG" alt="El museo de la incertidumbre">
+        </div>
+        <div class="row-text">
+            El museo de la incertidumbre
+        </div>
     </a>
 
 </section>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El museo de la incertidumbre</title>
+<title>Museografía de lo incierto</title>
 
 <style>
 
@@ -77,31 +77,69 @@ header {
     pointer-events: auto;
 }
 
-/* CONTENT */
+/* HERO */
 
-.content {
-    padding: 140px 20px 100px 20px;
-    max-width: 800px;
-    margin: auto;
+.hero {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    text-align: center;
 }
 
-.content h1 {
-    text-align: left;
+.hero h1 {
+    font-size: 28px;
     font-weight: normal;
-    margin-bottom: 60px;
+    margin: 20px 0;
 }
 
-.content h2 {
-    text-align: left;
+.hero h2 {
+    font-size: 18px;
     font-weight: normal;
-    margin-top: 60px;
-    margin-bottom: 30px;
+    margin: 0;
 }
 
-.content p {
-    text-align: justify;
-    line-height: 1.8;
-    margin-bottom: 20px;
+/* ROW SECTION */
+
+.section {
+    padding: 60px 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 80px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.row.reverse {
+    flex-direction: row-reverse;
+}
+
+.row img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: cover;
+}
+
+.row-title {
+    font-size: 22px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .row,
+    .row.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .row img {
+        max-width: 85%;
+    }
 }
 
 </style>
@@ -115,35 +153,28 @@ header {
 </header>
 
 <nav id="mobileMenu" class="mobile-menu">
-    <a href="index.html">Inicio</a>
     <a href="duelos.html">Duelos salvajes</a>
+    <a href="museo.html">El museo de la incertidumbre</a>
 </nav>
 
-<div class="content">
+<section class="hero">
+    <h1>Duelos salvajes</h1>
+    <h2>El museo de la incertidumbre</h2>
+</section>
 
-    <h1>El museo de la incertidumbre</h1>
+<section class="section">
 
-    <h2>Estimado lector</h2>
+    <a href="duelos.html" class="row">
+        <img src="images/duelos.JPG" alt="Duelos salvajes">
+        <div class="row-title">Duelos salvajes</div>
+    </a>
 
-    <p>
-    Este museo no pretende ofrecer certezas. Tampoco busca establecer conclusiones definitivas.
-    Se trata de un espacio de tránsito, una sala donde las preguntas permanecen abiertas
-    y el visitante se convierte en parte activa de la interpretación.
-    </p>
+    <a href="museo.html" class="row reverse">
+        <img src="images/museo.JPG" alt="El museo de la incertidumbre">
+        <div class="row-title">El museo de la incertidumbre</div>
+    </a>
 
-    <p>
-    Lo incierto no es una carencia sino una condición. Habitamos la duda,
-    la ambigüedad y la incompletud como formas naturales de nuestra experiencia.
-    Este museo propone recorrer esa condición sin la urgencia de resolverla.
-    </p>
-
-    <p>
-    Aquí, cada pieza es una invitación a permanecer en la pregunta.
-    No hay respuestas finales, sólo aproximaciones.
-    El recorrido no se mide en conclusiones sino en resonancias.
-    </p>
-
-</div>
+</section>
 
 <script>
 function toggleMenu() {

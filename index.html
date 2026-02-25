@@ -124,7 +124,7 @@ header {
 
 .row {
     display: flex;
-    align-items: stretch; /* makes both sides same height */
+    align-items: stretch;
     width: 100%;
     max-width: 1000px;
     margin-bottom: 120px;
@@ -142,11 +142,11 @@ header {
     justify-content: center;
 }
 
-/* IMAGE */
+/* IMAGE — LANDSCAPE FORMAT */
 
 .row-image img {
     width: 90%;
-    height: 380px;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
 }
 
@@ -179,7 +179,7 @@ header {
 
     .row-image img {
         width: 90%;
-        height: 260px;
+        aspect-ratio: 16 / 9;
     }
 
     .row-text {

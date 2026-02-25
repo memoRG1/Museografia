@@ -9,52 +9,82 @@
 
 body {
     margin: 0;
-    background-color: #0e0e0e;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000;
     color: #e5e5e5;
-    font-family: Georgia, "Times New Roman", serif;
 }
 
 /* HEADER */
 
 header {
-    padding: 30px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
-header a {
+.logo {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.menu {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100vh;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 30px;
+    gap: 30px;
+    transition: right 0.4s ease;
+    z-index: 1000;
+}
+
+.mobile-menu a {
     color: #e5e5e5;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
 }
 
-/* TITLE */
-
-.page-title {
-    max-width: 900px;
-    margin: 100px auto 60px auto;
-    padding: 0 20px;
+.mobile-menu.active {
+    right: 0;
 }
 
-.page-title h1 {
-    font-size: 40px;
-    font-weight: 500;
-    margin: 0;
+/* CONTENT */
+
+.content {
+    padding: 140px 20px 80px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.content h1 {
     text-align: left;
+    font-weight: normal;
+    margin-bottom: 40px;
 }
 
-/* TEXT CONTENT */
-
-.text-content {
-    max-width: 700px;
-    margin: 0 auto 120px auto;
-    padding: 0 20px;
-}
-
-.text-content p {
+.content p {
+    text-align: center;
     text-align: justify;
-    line-height: 1.9;
-    font-size: 19px;
-    margin-bottom: 28px;
-    color: #d0d0d0;
+    line-height: 1.7;
+    margin-bottom: 20px;
 }
 
 </style>
@@ -63,32 +93,33 @@ header a {
 <body>
 
 <header>
-    <a href="index.html">← Volver</a>
+    <div class="logo">Museografía de lo incierto</div>
+    <div class="menu" onclick="toggleMenu()">☰</div>
 </header>
 
-<section class="page-title">
+<nav id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Inicio</a>
+    <a href="museo.html">El museo de la incertidumbre</a>
+</nav>
+
+<div class="content">
     <h1>Duelos salvajes</h1>
-</section>
-
-<section class="text-content">
 
     <p>
-    Aquí comienza el texto largo de la obra. Sustituye este párrafo con tu contenido real.
-    Este formato está optimizado para lectura extensa, con ancho moderado,
-    interlineado amplio y justificación para una experiencia más editorial.
+    Aquí irá el texto largo del proyecto. Puedes reemplazar este texto con tu contenido.
+    Este espacio está preparado para textos extensos de 3 a 8 páginas.
     </p>
 
     <p>
-    Puedes pegar directamente tus 3–8 páginas aquí. Cada párrafo debe ir dentro
-    de etiquetas &lt;p&gt; para mantener el espaciado correcto.
+    El texto está centrado dentro del contenedor, pero justificado para mantener una lectura elegante y equilibrada.
     </p>
+</div>
 
-    <p>
-    La combinación de tipografía serif, fondo oscuro y contraste moderado
-    crea una atmósfera más íntima y concentrada.
-    </p>
-
-</section>
+<script>
+function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
